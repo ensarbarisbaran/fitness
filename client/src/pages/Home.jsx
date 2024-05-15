@@ -3,17 +3,15 @@ import PrimaryButton from '../components/PrimaryButton'
 
 const Home = () => {
 
-    const sercan = ()=>{
-        console.log("sercan123")
-    }
+
 
   return (
-    <div>
-        <PrimaryButton 
-        onClick={()=>sercan()}
+    <div class="bg-cyan-400">
+      {/* <PrimaryButton
+        onClick={() => sercan()}
         baslik={"alperensar"}
-        />
-      
+      /> */}
+
     </div>
   )
 }

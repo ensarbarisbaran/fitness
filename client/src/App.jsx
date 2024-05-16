@@ -5,14 +5,12 @@ import Navbar from './partials/Navbar'
 
 const App = () => {
   return (
-    <body class="bg-cyan-400" >
+    <body>
 
 
-      <div class="bg-cyan-400">
+      <div className="bg-slate-900">
         <Navbar />
-        <h1 className="text-3xl font-bold underline">
 
-        </h1>
         <div>
           <Home />
 

@@ -1,53 +1,100 @@
 import React from 'react'
+import { Link } from "react-scroll";
+import { useState } from 'react';
+import { CiMenuFries } from "react-icons/ci"
+import { FaTimes } from "react-icons/fa"
 
-function Navbar() {
+
+const Navbar = () => {
+
+    const [click, setClick] = useState(false);
+    const handleClick = () => {
+        setClick(!click);
+    }
+
+    const content =
+        <>
+            <div className='lg:hidden block absolute top-16 w-full left-0 right-0 bg-slate-900 transition'>
+                <ul className='text-center text-xl p-20'>
+                    <Link spy={true} smooth={true}>
+                        <li className="my-4 py-4 border-b border-slate-800 hover:bg-slate-800">
+                            Home
+                        </li>
+                    </Link>
+                    <Link spy={true} smooth={true}>
+                        <li className="my-4 py-4 border-b border-slate-800 hover:bg-slate-800">
+                            About
+                        </li>
+                    </Link>
+                    <Link spy={true} smooth={true}>
+                        <li className="my-4 py-4 border-b border-slate-800 hover:bg-slate-800">
+                            Services
+                        </li>
+                    </Link>
+                    <Link spy={true} smooth={true}>
+                        <li className="my-4 py-4 border-b border-slate-800 hover:bg-slate-800">
+                            Projects
+                        </li>
+                    </Link>
+                    <Link spy={true} smooth={true}>
+                        <li className="my-4 py-4 border-b border-slate-800 hover:bg-slate-800">
+                            Contact
+                        </li>
+                    </Link>
+                </ul>
+
+            </div>
+
+        </>
 
 
     return (
 
-        <body class="bg-cyan-400">
-            <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-            <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-            <nav class="p-5 bg-white shadow md:flex md:items-center md: justify-between">
-                <div class="flex justify-between items-center">
-                    <span class="text-2xl font-[Poppins] cursor-pointer">
-                        <img class="h-10 inline"
-                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQMAgy_XeSr2CmOITAysaZtDxsVUSTSYtSM2EKE5ivhg&s" />
-                        tailwind
-
-                    </span>
-
-
-
-
-                    <span class="text-3xl cursor-pointer mx-2 md:hidden block">
-                        <ion-icon name="menu" ></ion-icon>
-                    </span>
+        <nav >
+            <div className='h-10vh flex justify-between z-50 text-white lg:py-5 px-20 py-4 '>
+                <div className='flex items-center flex-1 '>
+                    <span className='text-3xl font-bold'>Logo</span>
+                </div>
+                <div className='lg:flex md:flex lg:flex-1 items center justify-end font-normal hidden'>
+                    <div className='flex10' c>
+                        <ul className='flex gap-8 mr-16 text-[18px]'>
+                            <Link spy={true} smooth={true}>
+                                <li className='hover:text-fuchsia-600 transition border-b-2 border-slate-900 hover: border-fuchsia-600 cursor-pointer'>
+                                    Home
+                                </li>
+                            </Link>
+                            <Link spy={true} smooth={true}>
+                                <li className='hover:text-fuchsia-600 transition border-b-2 border-slate-900 hover: border-fuchsia-600 cursor-pointer'>
+                                    About
+                                </li>
+                            </Link>
+                            <Link spy={true} smooth={true}>
+                                <li className='hover:text-fuchsia-600 transition border-b-2 border-slate-900 hover: border-fuchsia-600 cursor-pointer'>
+                                    Services
+                                </li>
+                            </Link>
+                            <Link spy={true} smooth={true}>
+                                <li className='hover:text-fuchsia-600 transition border-b-2 border-slate-900 hover: border-fuchsia-600 cursor-pointer'>
+                                    Projects
+                                </li>
+                            </Link>
+                            <Link spy={true} smooth={true}>
+                                <li className='hover:text-fuchsia-600 transition border-b-2 border-slate-900 hover: border-fuchsia-600 cursor-pointer'>
+                                    Contact
+                                </li>
+                            </Link>
+                        </ul>
+                    </div>
+                </div>
+                <div>
+                    {click && content}
                 </div>
 
-                <ul class="md:flex md: items-center z-[-1] md:z-auto md:static absolute bg-white w-full left-0 md:w-auto md:py-o py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500">
-                    <li class="mx-4 my-6  md:my-0">
-                        <a href="#" class="text-x1 hover:text-cyan-500 duration-500">Home</a>
-                    </li>
-
-                    <li class="mx-4 my-6  md:my-0">
-                        <a href="#" class="text-x1 hover:text-cyan-500 duration-500">Service</a>
-                    </li>
-
-                    <li class="mx-4 my-6  md:my-0">
-                        <a href="#" class="text-x1 hover:text-cyan-500 duration-500">Contact</a>
-                    </li>
-
-                    <li class="mx-4 my-6  md:my-0">
-                        <a href="#" class="text-x1 hover:text-cyan-500 duration-500">Blog</a>
-                    </li>
-                    <h2 class=""></h2>
-
-                </ul>
-            </nav>
-
-
-        </body>
+                <button className='block sm:hidden transition' onClick={handleClick}>
+                    {click ? <FaTimes /> : <CiMenuFries />}
+                </button>
+            </div>
+        </nav>
 
     )
 }

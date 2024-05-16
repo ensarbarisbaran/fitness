@@ -1,16 +1,16 @@
 import React from 'react'
 import Home from './pages/Home'
+import PopUp from './partials/PopUp'
 
 const App = () => {
   return (
     <div>
-      <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
-    <div>
-    <Home/>
+    <PopUp
+    Headline={"sadfsaf"}
+    description={"asdffsad"}
+    />
     </div>
-    </div>
+    
   )
 }
 

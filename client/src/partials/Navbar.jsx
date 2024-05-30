@@ -3,9 +3,11 @@ import { Link } from "react-scroll";
 import { useState } from 'react';
 import { CiMenuFries } from "react-icons/ci"
 import { FaTimes } from "react-icons/fa"
+import { useNavigate } from 'react-router-dom';
 
 
 const Navbar = () => {
+    const navigate = useNavigate();
 
     const [click, setClick] = useState(false);
     const handleClick = () => {
@@ -16,27 +18,27 @@ const Navbar = () => {
         <>
             <div className='lg:hidden block absolute top-16 w-full left-0 right-0 bg-slate-900 transition'>
                 <ul className='text-center text-xl p-20'>
-                    <Link spy={true} smooth={true}>
+                    <Link to="home" spy={true} smooth={true}>
                         <li className="my-4 py-4 border-b border-slate-800 hover:bg-slate-800">
                             Home
                         </li>
                     </Link>
-                    <Link spy={true} smooth={true}>
+                    <Link to="home" spy={true} smooth={true}>
                         <li className="my-4 py-4 border-b border-slate-800 hover:bg-slate-800">
                             About
                         </li>
                     </Link>
-                    <Link spy={true} smooth={true}>
+                    <Link to="home" spy={true} smooth={true}>
                         <li className="my-4 py-4 border-b border-slate-800 hover:bg-slate-800">
                             Services
                         </li>
                     </Link>
-                    <Link spy={true} smooth={true}>
+                    <Link to="home" spy={true} smooth={true}>
                         <li className="my-4 py-4 border-b border-slate-800 hover:bg-slate-800">
-                            Projects
+                            Login
                         </li>
                     </Link>
-                    <Link spy={true} smooth={true}>
+                    <Link to="home" spy={true} smooth={true}>
                         <li className="my-4 py-4 border-b border-slate-800 hover:bg-slate-800">
                             Contact
                         </li>
@@ -51,38 +53,40 @@ const Navbar = () => {
     return (
 
         <nav >
-            <div className='h-10vh flex justify-between z-50 text-white lg:py-5 px-20 py-4 '>
+            <div className='h-10vh flex justify-between z-50 text-white lg:py-5 px-20 py-4 bg-slate-900 '>
                 <div className='flex items-center flex-1 '>
                     <span className='text-3xl font-bold'>Logo</span>
                 </div>
                 <div className='lg:flex md:flex lg:flex-1 items center justify-end font-normal hidden'>
-                    <div className='flex10' c>
+                    <div className='flex10' >
                         <ul className='flex gap-8 mr-16 text-[18px]'>
-                            <Link spy={true} smooth={true}>
-                                <li className='hover:text-fuchsia-600 transition border-b-2 border-slate-900 hover: border-fuchsia-600 cursor-pointer'>
+                            <p >
+                                <li className='hover:text-fuchsia-600 transition border-b-2 border-slate-900 hover: border-fuchsia-600 cursor-pointer' onClick={() => navigate("/")}>
                                     Home
                                 </li>
-                            </Link>
-                            <Link spy={true} smooth={true}>
-                                <li className='hover:text-fuchsia-600 transition border-b-2 border-slate-900 hover: border-fuchsia-600 cursor-pointer'>
+                            </p>
+                            <p >
+                                <li className='hover:text-fuchsia-600 transition border-b-2 border-slate-900 hover: border-fuchsia-600 cursor-pointer' onClick={() => navigate("/About")}>
                                     About
                                 </li>
-                            </Link>
-                            <Link spy={true} smooth={true}>
-                                <li className='hover:text-fuchsia-600 transition border-b-2 border-slate-900 hover: border-fuchsia-600 cursor-pointer'>
+                            </p>
+                            <p >
+                                <li className='hover:text-fuchsia-600 transition border-b-2 border-slate-900 hover: border-fuchsia-600 cursor-pointer' onClick={() => navigate("/Services")}>
                                     Services
                                 </li>
-                            </Link>
-                            <Link spy={true} smooth={true}>
-                                <li className='hover:text-fuchsia-600 transition border-b-2 border-slate-900 hover: border-fuchsia-600 cursor-pointer'>
-                                    Projects
+                            </p>
+                            <p >
+                                <li className='hover:text-fuchsia-600 transition border-b-2 border-slate-900 hover: border-fuchsia-600 cursor-pointer' onClick={() => navigate(`/Login`)}>
+                                    Login
                                 </li>
-                            </Link>
-                            <Link spy={true} smooth={true}>
-                                <li className='hover:text-fuchsia-600 transition border-b-2 border-slate-900 hover: border-fuchsia-600 cursor-pointer'>
-                                    Contact
+
+                            </p>
+
+                            <p >
+                                <li className='hover:text-fuchsia-600 transition border-b-2 border-slate-900 hover: border-fuchsia-600 cursor-pointer' onClick={() => navigate("/Register")}>
+                                    Register
                                 </li>
-                            </Link>
+                            </p>
                         </ul>
                     </div>
                 </div>
@@ -94,7 +98,7 @@ const Navbar = () => {
                     {click ? <FaTimes /> : <CiMenuFries />}
                 </button>
             </div>
-        </nav>
+        </nav >
 
     )
 }

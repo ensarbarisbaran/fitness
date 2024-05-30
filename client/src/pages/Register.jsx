@@ -3,11 +3,13 @@ import React from 'react'
 import { Link } from 'react-scroll'
 import { BiUser } from "react-icons/bi"
 import { AiOutlineUnlock } from 'react-icons/ai';
+import { useNavigate } from 'react-router-dom';
 
 
 const Register = () => {
+    const navigate = useNavigate();
     return (
-        <div>
+        <div className='text-white h-[100vh] flex justify-center items-center bg-cover bg-cyan-600' style={{ "backgroundImage": "url(/bg.png)" }}>
 
             <div>
                 <div className='bg-slate-800 border border-slate-400 rounded-md p-8 shadow-lg backdrop-filter backdrop-blur-sm bg-opacity-30 relative'>
@@ -35,7 +37,7 @@ const Register = () => {
                         <button className='w-full  mb-4 text-[18px] mt-6 rounded-full bg-white text-emerald-800 hover:bg-emerald-600 hover:text-white py-2 transition-colors duration-300' type='submit'>Register</button>
                         <div>
                             <span className='mt-4'>
-                                Already Create an Account? <Link className='text-blue-500' to="/Login">Login</Link>
+                                Already Create an Account? <p className='text-blue-500 cursor-pointer' onClick={() => navigate("/Login")} >Login</p>
                             </span>
                         </div>
                     </form>

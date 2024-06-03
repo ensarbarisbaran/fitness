@@ -8,7 +8,6 @@ import Register from './pages/Register'
 import { Link } from "react-router-dom"
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Services from './pages/Services'
-import bgvideo from "./assets/bgvideo.mp4"
 
 
 

@@ -1,5 +1,6 @@
 import React from 'react'
 import Header from '../assets/Header';
+import Post from '../assets/Posts';
 
 const HomePage = () => {
 
@@ -16,24 +17,12 @@ const HomePage = () => {
             }
           </section>
 
-          <section className=''>
-            <div className='flex flex-col w-full border border-gray-100 bg-black/50 border-1 max-h-72'>
-              <div className='flex p-1 space-x-2 bg-pink-400 justify-between  items-center'>
-                <div className='flex space-x-2 justify-center items-center'>
-                  <div className='w-10 h-10 bg-gray-400 border-2 border-pink-400 rounded-full' />
-                  <div>UserName</div>
-                </div>
-                <div className='select-none ml-auto w-4'>...</div>
-              </div>
-              <div className='w-full h-full bg-black aspect-square'></div>
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-
-            </div>
-
+          <section className='flex flex-col gap-y-3 '>
+            {
+              new Array(5).fill(1).map((_, i) => (
+                <Post key={i} postIndex={i} />
+              ))
+            }
           </section>
         </div>
 

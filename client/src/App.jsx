@@ -8,6 +8,7 @@ import Register from './pages/Register'
 import { Link } from "react-router-dom"
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Services from './pages/Services'
+import Footer from './partials/Footer'
 
 
 
@@ -25,6 +26,7 @@ const App = () => {
           <Route path="/About" element={<About />} />
           <Route path="/Services" element={<Services />} />
         </Routes>
+        <Footer/>
       </div>
     </Router>
 

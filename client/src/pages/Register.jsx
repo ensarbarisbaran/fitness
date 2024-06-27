@@ -10,7 +10,6 @@ const Register = () => {
     const navigate = useNavigate();
     return (
         <div className='text-white h-[100vh] flex justify-center items-center bg-cover bg-cyan-600' style={{ "backgroundImage": "url(/bg.png)" }}>
-
             <div>
                 <div className='bg-slate-800 border border-slate-400 rounded-md p-8 shadow-lg backdrop-filter backdrop-blur-sm bg-opacity-30 relative'>
                     <h1 className='text-4xl text-whitefont-bold text-center mb-6'>Register</h1>
